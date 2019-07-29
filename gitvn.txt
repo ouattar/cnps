@@ -1,0 +1,101 @@
+
+Git vs SVN
+14 novembre 2018
+Git vs SVN - Quelle est la différence?
+GIT À L'ÉCHELLE
+Si vous recherchez une solution de contrôle de version, vous pouvez extraire certaines options open source. 
+Mais comment comparer Git et Subversion (SVN)?
+
+Lisez plus pour apprendre les différences fondamentales entre ces systèmes.
+
+Architecture de serveur
+Le logiciel Git est installé sur un poste de travail et agit en tant que client et serveur. 
+Avec SVN, il existe un serveur et un client distincts. Avec Git, chaque développeur dispose d’une copie 
+locale de l’historique des versions complètes du projet sur son ordinateur. Avec SVN, seuls les fichiers 
+sur lesquels un développeur travaille sont conservés sur la machine locale et le développeur doit être en 
+ligne et travailler avec le serveur.
+
+Les utilisateurs SVN extraient les fichiers et enregistrent les modifications sur le serveur. 
+Les changements de git se produisent localement. L'avantage est que le développeur ne doit pas 
+nécessairement être connecté en permanence. Une fois tous les fichiers téléchargés sur le poste de travail du développeur,
+ les opérations locales sont plus rapides.
+
+Auparavant, les développeurs Git disposant chacun d'une copie de l'historique des versions complètes, 
+ils pouvaient facilement partager les modifications avant de les transférer dans un référentiel central. 
+Maintenant tout le partage est fait dans les dépôts centraux, comme un GitHub. Et, dans le monde actuel, 
+les entreprises ont des projets qui couvrent plusieurs référentiels comprenant de gros fichiers binaires. 
+À mesure que les projets se développent, stocker localement n'est pas vraiment réaliste ni souhaitable. 
+En ce qui concerne les performances de Git par rapport à SVN, le modèle client-serveur de SVN surpasse les performances 
+de fichiers et de bases de code plus volumineux.
+
+SVN gagne pour stocker des fichiers binaires
+Stocker des fichiers binaires volumineux dans Git peut ralentir les avantages qu’ils prétendent avoir sur SVN. 
+Les développeurs passent beaucoup de temps à attendre le référentiel complet sur leur ordinateur. 
+Chaque fois qu'un fichier volumineux est modifié et validé, les référentiels Git croissent de manière exponentielle.
+
+Bien sûr, il existe des solutions de contournement pour stocker vos fichiers binaires dans Git, telles que Git LFS. 
+Néanmoins, chaque action de développeur conduit à une montagne de données d’historique des changements. Cela va ralentir les performances.
+
+Dans SVN, seuls l'arborescence de travail et les dernières modifications sont extraites sur des machines locales. 
+Les vérifications prennent moins de temps dans SVN lorsque de nombreux changements sont apportés aux fichiers binaires.
+
+SVN vs. Git Branching
+L'une des plaintes les plus courantes à propos de SVN est son modèle fastidieux de ramification et de fusion complexe. 
+Cela peut prendre beaucoup de temps. Les branches SVN sont créées en tant que répertoires dans un référentiel. 
+Cette structure de répertoires est le principal problème avec les branches SVN . Lorsque la branche est prête, vous vous engagez dans le coffre.
+
+Bien sûr, vous n'êtes pas le seul à fusionner les changements. Votre version du coffre peut ne pas refléter les branches des développeurs. 
+Cela signifie que les conflits, les fichiers manquants et les changements brouillés constituent une énigme pour votre branche.
+
+Les développeurs aiment Git en raison de son modèle de branchement efficace. Dans Git, les branches ne sont que des références à un certain commit, 
+ce qui les rend à la fois légères et puissantes. Git vous permet de créer, supprimer et modifier une branche à tout moment sans affecter les commits. 
+Si vous avez besoin de tester une nouvelle fonctionnalité ou de trouver un bogue, vous pouvez créer une branche, apporter les modifications, 
+transférer le commit vers le référentiel central, puis supprimer la branche.
+
+Contrôles d'accès
+Le contrôle d'accès est une autre clé du débat entre Git et SVN. 
+Les deux systèmes adoptent des approches différentes en ce qui concerne les autorisations et les accès. 
+Par défaut, Git suppose que tous les contributeurs ont les mêmes autorisations.
+
+D'autre part, SVN vous permet de spécifier des contrôles d'accès en lecture et en écriture par niveau de fichier et par niveau de répertoire.
+
+Sécurité avec Git ou SVN
+Avec SVN, l'historique des modifications du référentiel est assez cohérent. Pour modifier l'historique du référentiel,
+vous devez avoir accès au serveur central.
+
+La nature distribuée de Git permet à quiconque de modifier une partie de l'historique de son référentiel local. 
+Bien que le fait de changer une histoire modifiée soit fortement découragé, cela peut arriver. 
+Cela pose des problèmes si d'autres développeurs s'appuient sur des modifications particulières.
+
+Dans Git, l'historique complet du référentiel est «sauvegardé» chaque fois qu'un développeur le clone sur son ordinateur. 
+Ce mécanisme de sauvegarde naturel est inutile s'il est négligé.
+
+Les sauvegardes régulières sont fortement encouragées dans Git et SVN. 
+Vous ne voulez pas être sur le point de réception d'un crash de serveur sans une copie récente de votre serveur partagé.
+
+Conditions de stockage
+Comme les arguments pour Git ou SVN font rage, vous remarquerez peut-être que lorsqu'il s'agit de stockage, il n'y a pas de différence. 
+De manière surprenante, l'utilisation de l'espace disque est égale pour les référentiels Git et SVN. 
+Cela est vrai même si SVN suit les modifications au niveau du fichier et que Git suit les modifications au niveau du référentiel.
+
+Là encore, le stockage de gros fichiers binaires dans SVN serait beaucoup plus petit que leur équivalent Git.
+
+Qu'est-ce qui est plus intuitif - Git ou SVN?
+Un avantage majeur dans le match Git vs SVN est que SVN est souvent considéré comme plus facile à apprendre. 
+Cela est particulièrement vrai pour les utilisateurs non techniques. Ils sont capables de prendre rapidement part aux opérations courantes.
+
+Bien que les deux utilisent la ligne de commande comme interface utilisateur principale, la syntaxe dans Git peut submerger les débutants. 
+SVN est plus facilement utilisé par les non-programmeurs qui souhaitent mettre à jour les ressources sans code. 
+En savoir plus sur les commandes SVN et voir comment elles se comparent à d'autres systèmes de contrôle de version.
+
+Basculer vers quel VCS?
+Il y a plusieurs raisons pour passer de SVN. Ce n'est pas un excellent outil d'automatisation et de développement. 
+Et qu’il n’a plus de communauté dynamique pour le soutenir.
+
+Git semble être une évidence quand on cherche un système plus moderne et supporté pour remplacer SVN. 
+D'autant plus qu'il est également open source: vous n'aurez pas à budgéter pour quelque chose que vous ne payez pas aujourd'hui.
+
+Toutefois, si vous travaillez avec des fichiers volumineux, que vous avez des équipes globales de grande taille, 
+des problèmes de sécurité ou d'autres problèmes «à grande échelle», Git peut créer plus de problèmes qu'il n'en résout. 
+Consultez notre guide de comparaison Perforce pour voir comment Helix Core se compare . 
+
